@@ -1055,7 +1055,7 @@ class Home:
             index = self.parser_mapping.get(dev_type)
 
             rdx: int = dev.getRoomIndex()
-            if dev_type == DeviceType.LIGHT and rdx > 1 and rdx < 6
+            if dev_type == DeviceType.LIGHT and rdx > 1 and rdx < 6:
                 index = index + 2
             
             info: RS485Info = self.rs485_info_list[index]
