@@ -1053,6 +1053,11 @@ class Home:
             dev: Device = kwargs['device']
             dev_type: DeviceType = dev.getType()
             index = self.parser_mapping.get(dev_type)
+
+            rdx: int = dev.roomIndex()
+            if dev_type == DeviceType.LIGHT and rdx > 1 and rdx < 6
+                index = index + 2
+            
             info: RS485Info = self.rs485_info_list[index]
             kwargs['parser'] = info.parser
         except Exception as e:
